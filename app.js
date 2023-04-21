@@ -20,11 +20,18 @@ function makeRows(rows, cols) {
   gridContainer.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
     let cell = document.createElement("div");
-    gridContainer.appendChild(cell).className = "gridItem";
+    cell.setAttribute('class', `gridItem`);
+    cell.addEventListener('mouseover', changeColor);
+    gridContainer.appendChild(cell);
   };
 };
 
-makeRows(16, 16);
+makeRows(32, 32);
+
+function changeColor(e){
+    e.target.style.background = 'grey';
+}
+
 
 /* var item = document.getElementById("gridItem");
 item.addEventListener("mouseover", colorShift)
@@ -34,24 +41,12 @@ function colorShift(){
    item.setAttribute("style", "background-color:gray;")
 } */
 
-div.gridItem.addEventListener('onmouseover', function (e){
-    e.target.style.background = 'gray';
-})
-
-
 /*
-const container = document.getElementById("grid-container");
-const row = document.createElement("div");
-const cell = document.createElement("div");
+const gridItem = document.getElementByClassName("gridItem")
 
-function createGrid() {
-    for (let i = 0; i < 16; i++) {
-      row.classList.add("row");
-      container.appendChild(row);
-      for (let j = 0; j < 16; j++) {
-        cell.classList.add("cell");
-        row.appendChild(cell);
-      }
-    }
-  }
+gridItem.addEventListener('mouseover', changeColor)
+
+function changeColor(){
+    gridItem.setAttribute("id", "background-color : gray;")
+}
 */
