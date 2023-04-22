@@ -32,21 +32,9 @@ function changeColor(e){
     e.target.style.background = 'grey';
 }
 
+const clear = document.getElementById("clear");
+clear.addEventListener('click', resetBoard);
 
-/* var item = document.getElementById("gridItem");
-item.addEventListener("mouseover", colorShift)
-
-function colorShift(){  
-   var item = document.getElementById("gridItem");
-   item.setAttribute("style", "background-color:gray;")
-} */
-
-/*
-const gridItem = document.getElementByClassName("gridItem")
-
-gridItem.addEventListener('mouseover', changeColor)
-
-function changeColor(){
-    gridItem.setAttribute("id", "background-color : gray;")
+function resetBoard(cell){
+    cell.style.background = "white";
 }
-*/

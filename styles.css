@@ -1,18 +1,22 @@
 
 body{
     display: flex;
-    justify-content: center;
 }
-/*
-#flexContainer{
+
+.options {
     display: flex;
-    flex-wrap: wrap;
-    height: 30vw;
-    width: 30vw;
-    margin: 10% 0%;
-    border: 1px solid black;
+    flex: 1;
+    border: solid blue 1px;
+    justify-content: center;
+    align-items: center;
 }
-*/
+
+.board {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+}
 
 :root {
   --grid-cols: 1;
@@ -21,15 +25,17 @@ body{
 
 #gridContainer {
   display: grid;
+  height: 500px;
+  width: 500px;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
-  border: 1 px solid blue;
+  border: 2px solid blue;
 }
 
 .gridItem {
-  padding: 1em;
   border: 1px solid #ddd;
   text-align: center;
+  background-color: white;
 }
 
 
