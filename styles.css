@@ -5,16 +5,22 @@ body{
 
 .options {
     display: flex;
+    flex-direction: column;
     flex: 1;
     border: solid blue 1px;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+.slidecontainer{
+    border: solid 1px red;
 }
 
 .board {
     flex: 3;
     display: flex;
     justify-content: center;
+    gap: 20px;
     border: 1px solid red;
 }
 

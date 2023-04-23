@@ -35,6 +35,7 @@ function changeColor(e){
 const clear = document.getElementById("clear");
 clear.addEventListener('click', resetBoard);
 
-function resetBoard(cell){
-    cell.style.background = "white";
+const allCells = document.getElementsByClassName('gridItem')
+function resetBoard(cells){
+    cells.style.background = "white";
 }
