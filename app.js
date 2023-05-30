@@ -26,16 +26,30 @@ function makeRows(rows, cols) {
   };
 };
 
-makeRows(32, 32);
+makeRows(10, 10);
 
 function changeColor(e){
     e.target.style.background = 'grey';
 }
 
 const clear = document.getElementById("clear");
-clear.addEventListener('click', resetBoard);
+clear.addEventListener('click', makeRows)
 
-const allCells = document.getElementsByClassName('gridItem')
-function resetBoard(cells){
-    cells.style.background = "white";
+
+// Slider Value
+const slider = document.getElementById("boxSize");
+const output = document.getElementById("output");
+output.textContent = `Box Size: ${slider.value} x ${slider.value}`;
+
+slider.oninput = function() {
+  output.textContent = `Box Size: ${this.value} x ${this.value}`;
+  makeRows(this.value, this.value);
 }
+
+/*
+slider creates size
+  size populates slider label
+size populates box creation function
+  box clears
+  box reloads
+*/
