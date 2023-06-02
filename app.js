@@ -1,19 +1,13 @@
-/*
-const flexContainer = document.getElementById("flexContainer");
+const defaultSize = 10;
 
-function flexGrid(rows, cols){
-    for (c = 0; c < (rows * cols); c++) {
-        let cell = document.createElement("div");
-        cell.innerText = (c + 1);
-        flexContainer.appendChild(cell).className = "gridItem";
-      }; 
-      gridItem.style //figure out how ot append style in-line to determine flex-basis
+let currentSize = defaultSize;
 
-
-}
-*/
-
+const slider = document.getElementById("boxSize");
 const gridContainer = document.getElementById("gridContainer");
+const displaySize = document.getElementById("displaySize");
+const erase = document.getElementById("erase");
+
+makeRows(currentSize,currentSize)
 
 function makeRows(rows, cols) {
   gridContainer.style.setProperty('--grid-rows', rows);
@@ -26,25 +20,25 @@ function makeRows(rows, cols) {
   };
 };
 
-makeRows(10, 10);
-
 function changeColor(e){
     e.target.style.background = 'grey';
 }
 
-const clear = document.getElementById("clear");
-clear.addEventListener('click', makeRows)
+erase.onclick = () => {
+  gridContainer.textContent = " ";
+  makeRows(slider.value, slider.value);
+}
 
 
 // Slider Value
-const slider = document.getElementById("boxSize");
-const output = document.getElementById("output");
-output.textContent = `Box Size: ${slider.value} x ${slider.value}`;
+displaySize.textContent = `Box Size: ${currentSize} x ${currentSize}`;
 
 slider.oninput = function() {
-  output.textContent = `Box Size: ${this.value} x ${this.value}`;
+  displaySize.textContent = `Box Size: ${this.value} x ${this.value}`;
+  gridContainer.textContent = '';
   makeRows(this.value, this.value);
 }
+
 
 /*
 slider creates size
