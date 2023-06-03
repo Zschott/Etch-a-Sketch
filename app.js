@@ -7,9 +7,11 @@ const gridContainer = document.getElementById("gridContainer");
 const displaySize = document.getElementById("displaySize");
 const erase = document.getElementById("erase");
 
-makeRows(currentSize,currentSize)
+makeRows(currentSize)
 
-function makeRows(rows, cols) {
+function makeRows(currentSize) {
+  let rows = currentSize;
+  let cols = currentSize;
   gridContainer.style.setProperty('--grid-rows', rows);
   gridContainer.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
@@ -29,21 +31,11 @@ erase.onclick = () => {
   makeRows(slider.value, slider.value);
 }
 
-
-// Slider Value
 displaySize.textContent = `Box Size: ${currentSize} x ${currentSize}`;
 
 slider.oninput = function() {
+  currentSize = this.value;
   displaySize.textContent = `Box Size: ${this.value} x ${this.value}`;
   gridContainer.textContent = '';
-  makeRows(this.value, this.value);
+  makeRows(currentSize);
 }
-
-
-/*
-slider creates size
-  size populates slider label
-size populates box creation function
-  box clears
-  box reloads
-*/
