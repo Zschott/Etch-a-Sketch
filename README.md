@@ -1,5 +1,7 @@
 # Etch-a-Sketch
 
+Please find the live demo here: https://zschott.github.io/Etch-a-Sketch/
+
 This project was my first real step at combinging HTML, CSS, and JavaScript.
 
 Like many of my projects completed at this time for the Odin Project, this serves mostly as a proof of concept. I'd truly like to spend more time cleaning this project up, but unfortunately must move on in order to focus on learning new concepts.
