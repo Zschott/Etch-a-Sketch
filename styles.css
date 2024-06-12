@@ -12,6 +12,15 @@ body{
     align-items: center;
 }
 
+.description{
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: fit-content;
+  text-align: center;
+}
+
 #slidecontainer{
     border: solid 1px red;
 }
